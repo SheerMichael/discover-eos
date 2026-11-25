@@ -14,6 +14,7 @@
   <link rel="icon" href="./assets/eos-logo.webp" type="image/webp">
   <link rel="preload" href="./assets/playfair.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./style.css">
+  <script src="./timeline.js" defer></script>
   <title>Discover EOS · Juego de Tactica</title>
 </head>
 <body id="top">
@@ -26,8 +27,8 @@
       </a>
       <nav class="navigation" aria-label="Main navigation">
         <a href="#game">The Game</a>
-        <a href="#history">History</a>
         <a href="#creator">The Creator</a>
+        <a href="#history">History</a>
       </nav>
       <a class="button button-small button-outline" href="https://www.eosph.com/">Play EOS</a>
     </div>
@@ -42,7 +43,7 @@
           <p class="hero-description">Invented by Rodney I. Ebrole, this Filipino board game brings seven kinds of pieces to a field of staggered circles.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="https://www.eosph.com/"><span class="play-icon" aria-hidden="true"></span> Play online</a>
-            <a class="button button-outline" href="#history">Explore the history</a>
+            <a class="button button-outline" href="#creator">Meet the creator</a>
           </div>
         </div>
         <figure class="board-stage">
@@ -75,35 +76,8 @@
       </div>
     </section>
 
-    <section class="history section" id="history" aria-labelledby="history-heading">
-      <div class="wrap history-inner">
-        <div>
-          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> History</p>
-          <h2 id="history-heading">From E-One<br>Seven to EOS.</h2>
-          <p class="history-summary">The game’s public record begins in Zamboanga City, where Ebrole shared an early version with the university community.</p>
-        </div>
-        <ol class="timeline">
-          <li>
-            <time datetime="2015">2015</time>
-            <div><h3>Early play in Zamboanga</h3><p>Western Mindanao State University profiled E-One Seven Battle of Tactics ahead of its planned appearance at the University Palaro. The original E-One Seven also appears in the 2015 Philippine copyright register.</p><a class="text-link" href="https://onlineservices.ipophil.gov.ph/CopyrightSearch/CR_Registrations04smry.asp?start=37651">IPOPHL copyright record</a></div>
-          </li>
-          <li>
-            <time datetime="2017">2017</time>
-            <div><h3>Selected for iDEYA</h3><p>MSU–IIT named E-One Seven among the nine projects in the first batch of its iDEYA startup incubator.</p><a class="text-link" href="https://www.msuiit.edu.ph/news/news-detail.php?id=921">MSU–IIT announcement</a></div>
-          </li>
-          <li>
-            <time datetime="2026">2026</time>
-            <div><h3>EOS 2.0 enters the copyright register</h3><p>The Intellectual Property Office of the Philippines lists <cite>EOS 2.0 Juego de Tactica</cite> under Rodney Insertado Ebrole.</p><a class="text-link" href="https://onlineservices.ipophil.gov.ph/CopyrightSearch/CR_Registrations04smry.asp?start=8201">IPOPHL copyright record</a></div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
     <section class="creator section" id="creator" aria-labelledby="creator-heading">
       <div class="wrap creator-inner">
-        <div class="creator-art" aria-hidden="true">
-          <span class="creator-monogram">RE</span>
-        </div>
         <div class="creator-copy">
           <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> The Creator</p>
           <h2 id="creator-heading">Rodney I. Ebrole</h2>
@@ -113,6 +87,63 @@
             <a class="text-link" href="https://www.mepublication.com/about-5-1">Read his author profile</a>
             <a class="text-link" href="https://doi.org/10.15379/ijmst.v10i2.1152">Read his folklore research</a>
           </div>
+        </div>
+        <figure class="creator-portrait">
+          <img src="./assets/rodney-ebrole.webp" width="545" height="825" loading="lazy" decoding="async" alt="Portrait of Rodney I. Ebrole">
+        </figure>
+      </div>
+    </section>
+
+    <section class="history section" id="history" aria-labelledby="history-heading">
+      <div class="wrap">
+        <div class="section-intro history-intro">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> History</p>
+            <h2 id="history-heading">From E-One Seven to EOS.</h2>
+          </div>
+          <p class="history-summary">The game’s public record begins in Zamboanga City, where Ebrole shared an early version with the university community.</p>
+        </div>
+
+        <div class="history-timeline" data-timeline>
+          <div class="history-tabs" role="tablist" aria-label="EOS history milestones" hidden>
+            <button type="button" id="history-tab-2015" role="tab" aria-controls="milestone-2015" aria-selected="true">
+              <span class="history-tab-year">2015</span>
+              <span class="history-tab-label">Early play</span>
+            </button>
+            <button type="button" id="history-tab-2017" role="tab" aria-controls="milestone-2017" aria-selected="false" tabindex="-1">
+              <span class="history-tab-year">2017</span>
+              <span class="history-tab-label">iDEYA</span>
+            </button>
+            <button type="button" id="history-tab-2026" role="tab" aria-controls="milestone-2026" aria-selected="false" tabindex="-1">
+              <span class="history-tab-year">2026</span>
+              <span class="history-tab-label">EOS 2.0</span>
+            </button>
+          </div>
+
+          <article class="history-panel" id="milestone-2015">
+            <div class="history-date"><time datetime="2015">2015</time></div>
+            <div class="history-detail">
+              <h3>Early play in Zamboanga</h3>
+              <p>Western Mindanao State University profiled E-One Seven Battle of Tactics ahead of its planned appearance at the University Palaro. The original E-One Seven also appears in the 2015 Philippine copyright register.</p>
+              <a class="text-link" href="https://onlineservices.ipophil.gov.ph/CopyrightSearch/CR_Registrations04smry.asp?start=37651">IPOPHL copyright record</a>
+            </div>
+          </article>
+          <article class="history-panel" id="milestone-2017">
+            <div class="history-date"><time datetime="2017">2017</time></div>
+            <div class="history-detail">
+              <h3>Selected for iDEYA</h3>
+              <p>MSU–IIT named E-One Seven among the nine projects in the first batch of its iDEYA startup incubator.</p>
+              <a class="text-link" href="https://www.msuiit.edu.ph/news/news-detail.php?id=921">MSU–IIT announcement</a>
+            </div>
+          </article>
+          <article class="history-panel" id="milestone-2026">
+            <div class="history-date"><time datetime="2026">2026</time></div>
+            <div class="history-detail">
+              <h3>EOS 2.0 enters the copyright register</h3>
+              <p>The Intellectual Property Office of the Philippines lists <cite>EOS 2.0 Juego de Tactica</cite> under Rodney Insertado Ebrole.</p>
+              <a class="text-link" href="https://onlineservices.ipophil.gov.ph/CopyrightSearch/CR_Registrations04smry.asp?start=8201">IPOPHL copyright record</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
