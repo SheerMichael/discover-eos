@@ -13,9 +13,9 @@
   <meta property="og:image" content="https://sheermichael.github.io/discover-eos/assets/eos-board.webp">
   <link rel="icon" href="./assets/eos-logo.webp" type="image/webp">
   <link rel="preload" href="./assets/playfair.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./style.css?v=board">
+  <link rel="stylesheet" href="./style.css?v=piece-guide">
   <script src="./timeline.js" defer></script>
-  <script src="./board-demo.js" defer></script>
+  <script src="./board-demo.js?v=piece-guide" defer></script>
   <title>Discover EOS · Juego de Tactica</title>
 </head>
 <body id="top">
@@ -66,7 +66,7 @@
           </div>
           <div class="section-copy">
             <p>EOS shares chess’s emphasis on planning ahead. Its staggered circles and distinct pieces give players different paths to consider when moving, defending, or setting up a capture.</p>
-            <a class="text-link" href="https://www.eosph.com/learn">Read the official rules</a>
+            <a class="text-link" href="#board-demo">Explore the pieces</a>
           </div>
         </div>
         <dl class="game-facts">
@@ -75,37 +75,55 @@
           <div><dt>Players in tabletop versions</dt><dd class="fact-value">2 or 4</dd></div>
         </dl>
 
-        <section class="board-demo" id="board-demo" aria-labelledby="board-demo-heading" data-board-demo>
-          <div class="board-demo-copy">
-            <h3 id="board-demo-heading">One move, up close.</h3>
-            <p>The Steward starts at <strong>I7</strong>. Gold rings mark the neighboring circles one diagonal step away.</p>
-            <div class="board-demo-actions" data-demo-actions hidden>
-              <p role="status" data-demo-status>Choose a gold ring to trace a move.</p>
-              <button type="button" class="board-demo-reset" data-demo-reset disabled>Reset piece</button>
+        <section class="board-demo" id="board-demo" aria-labelledby="board-demo-heading">
+          <div class="board-demo-intro">
+            <div class="board-demo-copy">
+              <h3 id="board-demo-heading">Meet the seven pieces.</h3>
+              <p>Compare how each piece moves and captures on a small section of the EOS board.</p>
             </div>
+            <a class="text-link" href="https://www.eosph.com/learn">Full EOS guide</a>
           </div>
-          <div class="board-demo-surface">
-            <div class="board-demo-columns" aria-hidden="true"><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span></div>
-            <div class="board-demo-rows" aria-hidden="true"><span>9</span><span>8</span><span>7</span><span>6</span><span>5</span></div>
-            <div class="board-demo-grid" role="group" aria-label="Steward movement diagram">
-              <span class="board-demo-cell" style="--col: 2; --row: 1" aria-hidden="true"></span>
-              <span class="board-demo-cell" style="--col: 4; --row: 1" aria-hidden="true"></span>
-              <span class="board-demo-cell" style="--col: 6; --row: 1" aria-hidden="true"></span>
-              <span class="board-demo-cell" style="--col: 1; --row: 2" aria-hidden="true"></span>
-              <button class="board-demo-target" style="--col: 3; --row: 2" type="button" data-destination="H8" aria-label="Move the Steward to H8" aria-pressed="false" disabled></button>
-              <button class="board-demo-target" style="--col: 5; --row: 2" type="button" data-destination="J8" aria-label="Move the Steward to J8" aria-pressed="false" disabled></button>
-              <span class="board-demo-cell" style="--col: 7; --row: 2" aria-hidden="true"></span>
-              <span class="board-demo-cell" style="--col: 2; --row: 3" aria-hidden="true"></span>
-              <span class="board-demo-cell board-demo-origin" style="--col: 4; --row: 3" data-demo-origin aria-hidden="true"></span>
-              <span class="board-demo-cell" style="--col: 6; --row: 3" aria-hidden="true"></span>
-              <span class="board-demo-cell" style="--col: 1; --row: 4" aria-hidden="true"></span>
-              <button class="board-demo-target" style="--col: 3; --row: 4" type="button" data-destination="H6" aria-label="Move the Steward to H6" aria-pressed="false" disabled></button>
-              <button class="board-demo-target" style="--col: 5; --row: 4" type="button" data-destination="J6" aria-label="Move the Steward to J6" aria-pressed="false" disabled></button>
-              <span class="board-demo-cell" style="--col: 7; --row: 4" aria-hidden="true"></span>
-              <span class="board-demo-cell" style="--col: 2; --row: 5" aria-hidden="true"></span>
-              <span class="board-demo-cell" style="--col: 4; --row: 5" aria-hidden="true"></span>
-              <span class="board-demo-cell" style="--col: 6; --row: 5" aria-hidden="true"></span>
-              <img class="board-demo-piece" style="--col: 4; --row: 3" src="./assets/eos-steward.webp" width="154" height="160" loading="lazy" decoding="async" alt="Red Steward" data-demo-piece>
+          <div data-board-demo hidden>
+            <fieldset class="board-demo-picker">
+              <legend>Choose a piece</legend>
+              <div class="board-demo-options">
+                <label><input type="radio" name="eos-piece" value="supremo" checked><span><img src="./assets/eos-supremo.webp" alt="" width="103" height="160" loading="lazy">Supremo</span></label>
+                <label><input type="radio" name="eos-piece" value="archer"><span><img src="./assets/eos-archer.webp" alt="" width="102" height="160" loading="lazy">Archer</span></label>
+                <label><input type="radio" name="eos-piece" value="deacon"><span><img src="./assets/eos-deacon.webp" alt="" width="105" height="160" loading="lazy">Deacon</span></label>
+                <label><input type="radio" name="eos-piece" value="vice-roy"><span><img src="./assets/eos-vice-roy.webp" alt="" width="108" height="160" loading="lazy">Vice Roy</span></label>
+                <label><input type="radio" name="eos-piece" value="chancellor"><span><img src="./assets/eos-chancellor.webp" alt="" width="104" height="160" loading="lazy">Chancellor</span></label>
+                <label><input type="radio" name="eos-piece" value="minister"><span><img src="./assets/eos-minister.webp" alt="" width="115" height="160" loading="lazy">Minister</span></label>
+                <label><input type="radio" name="eos-piece" value="steward"><span><img src="./assets/eos-steward.webp" alt="" width="154" height="160" loading="lazy">Steward</span></label>
+              </div>
+            </fieldset>
+            <div class="board-demo-layout">
+              <div class="board-demo-lesson">
+                <fieldset class="board-demo-picker board-demo-mode">
+                  <legend>Try a lesson</legend>
+                  <div class="board-demo-options">
+                    <label><input type="radio" name="eos-lesson" value="movement" checked><span>Movement</span></label>
+                    <label><input type="radio" name="eos-lesson" value="attack"><span>Attack</span></label>
+                  </div>
+                </fieldset>
+                <div class="board-demo-explanation">
+                  <h4 data-demo-title></h4>
+                  <p data-demo-rule></p>
+                </div>
+                <p class="board-demo-status" role="status" data-demo-status></p>
+                <div class="board-demo-actions">
+                  <button type="button" class="board-demo-step" data-demo-step>Show move</button>
+                  <button type="button" class="board-demo-reset" data-demo-reset disabled>Reset</button>
+                </div>
+              </div>
+              <div class="board-demo-surface">
+                <p class="board-demo-caption" data-demo-caption></p>
+                <div class="board-demo-columns" aria-hidden="true"><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span></div>
+                <div class="board-demo-rows" aria-hidden="true"><span>10</span><span>9</span><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span></div>
+                <div class="board-demo-grid" role="group" aria-label="EOS practice board" data-demo-grid>
+                  <img class="board-demo-piece" src="./assets/eos-supremo.webp" loading="lazy" decoding="async" alt="" data-demo-piece>
+                  <img class="board-demo-piece" src="./assets/eos-opponent.webp" loading="lazy" decoding="async" alt="" data-demo-opponent hidden>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -201,7 +219,7 @@
         <img src="./assets/eos-logo.webp" width="34" height="34" alt="">
         <span>Discover <strong>EOS</strong></span>
       </a>
-      <p>Board artwork, Steward piece, and logo from the <a href="https://www.eosph.com/about">official EOS site</a>.</p>
+      <p>Board artwork, piece illustrations, and logo from the <a href="https://www.eosph.com/about">official EOS site</a>.</p>
     </div>
   </footer>
 </body>
