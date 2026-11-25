@@ -13,8 +13,9 @@
   <meta property="og:image" content="https://sheermichael.github.io/discover-eos/assets/eos-board.webp">
   <link rel="icon" href="./assets/eos-logo.webp" type="image/webp">
   <link rel="preload" href="./assets/playfair.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css?v=board">
   <script src="./timeline.js" defer></script>
+  <script src="./board-demo.js" defer></script>
   <title>Discover EOS · Juego de Tactica</title>
 </head>
 <body id="top">
@@ -73,6 +74,41 @@
           <div><dt>Types of pieces</dt><dd class="fact-value">7</dd></div>
           <div><dt>Players in tabletop versions</dt><dd class="fact-value">2 or 4</dd></div>
         </dl>
+
+        <section class="board-demo" id="board-demo" aria-labelledby="board-demo-heading" data-board-demo>
+          <div class="board-demo-copy">
+            <h3 id="board-demo-heading">One move, up close.</h3>
+            <p>The Steward starts at <strong>I7</strong>. Gold rings mark the neighboring circles one diagonal step away.</p>
+            <div class="board-demo-actions" data-demo-actions hidden>
+              <p role="status" data-demo-status>Choose a gold ring to trace a move.</p>
+              <button type="button" class="board-demo-reset" data-demo-reset disabled>Reset piece</button>
+            </div>
+          </div>
+          <div class="board-demo-surface">
+            <div class="board-demo-columns" aria-hidden="true"><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span></div>
+            <div class="board-demo-rows" aria-hidden="true"><span>9</span><span>8</span><span>7</span><span>6</span><span>5</span></div>
+            <div class="board-demo-grid" role="group" aria-label="Steward movement diagram">
+              <span class="board-demo-cell" style="--col: 2; --row: 1" aria-hidden="true"></span>
+              <span class="board-demo-cell" style="--col: 4; --row: 1" aria-hidden="true"></span>
+              <span class="board-demo-cell" style="--col: 6; --row: 1" aria-hidden="true"></span>
+              <span class="board-demo-cell" style="--col: 1; --row: 2" aria-hidden="true"></span>
+              <button class="board-demo-target" style="--col: 3; --row: 2" type="button" data-destination="H8" aria-label="Move the Steward to H8" aria-pressed="false" disabled></button>
+              <button class="board-demo-target" style="--col: 5; --row: 2" type="button" data-destination="J8" aria-label="Move the Steward to J8" aria-pressed="false" disabled></button>
+              <span class="board-demo-cell" style="--col: 7; --row: 2" aria-hidden="true"></span>
+              <span class="board-demo-cell" style="--col: 2; --row: 3" aria-hidden="true"></span>
+              <span class="board-demo-cell board-demo-origin" style="--col: 4; --row: 3" data-demo-origin aria-hidden="true"></span>
+              <span class="board-demo-cell" style="--col: 6; --row: 3" aria-hidden="true"></span>
+              <span class="board-demo-cell" style="--col: 1; --row: 4" aria-hidden="true"></span>
+              <button class="board-demo-target" style="--col: 3; --row: 4" type="button" data-destination="H6" aria-label="Move the Steward to H6" aria-pressed="false" disabled></button>
+              <button class="board-demo-target" style="--col: 5; --row: 4" type="button" data-destination="J6" aria-label="Move the Steward to J6" aria-pressed="false" disabled></button>
+              <span class="board-demo-cell" style="--col: 7; --row: 4" aria-hidden="true"></span>
+              <span class="board-demo-cell" style="--col: 2; --row: 5" aria-hidden="true"></span>
+              <span class="board-demo-cell" style="--col: 4; --row: 5" aria-hidden="true"></span>
+              <span class="board-demo-cell" style="--col: 6; --row: 5" aria-hidden="true"></span>
+              <img class="board-demo-piece" style="--col: 4; --row: 3" src="./assets/eos-steward.webp" width="154" height="160" loading="lazy" decoding="async" alt="Red Steward" data-demo-piece>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -165,7 +201,7 @@
         <img src="./assets/eos-logo.webp" width="34" height="34" alt="">
         <span>Discover <strong>EOS</strong></span>
       </a>
-      <p>Board artwork and logo from the <a href="https://www.eosph.com/about">official EOS site</a>.</p>
+      <p>Board artwork, Steward piece, and logo from the <a href="https://www.eosph.com/about">official EOS site</a>.</p>
     </div>
   </footer>
 </body>
